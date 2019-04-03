@@ -32,7 +32,7 @@
           <td>${person.firstName}</td>
           <td>${person.lastName}</td>
           <td>${person.email}</td>
-          <td>{person.birthDate}</td>
+          <td>${person.birthDate}</td>
           <td>modifier</td>
           <td>supprimer</td>
         </tr>
