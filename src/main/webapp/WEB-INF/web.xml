@@ -1,6 +1,6 @@
 <web-app>
 
-  <!-- NOT FOR PROD -->
+  <!-- NOT FOR PROD / JSP HOT RELOAD -->
   <servlet>
     <servlet-name>jsp</servlet-name>
     <init-param>

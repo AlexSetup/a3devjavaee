@@ -1,6 +1,7 @@
 package fr.imie.contact.repositories;
 
-import fr.imie.contact.entities.Person;
+import fr.imie.contact.entities.*;
+
 import java.util.*;
 
 public class PersonRepositoryMock extends PersonRepository {

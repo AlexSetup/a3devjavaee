@@ -1,8 +1,13 @@
 package fr.imie.contact.entities;
 
+import javax.persistence.*;
 import java.time.*;
 
+@Entity
 public class Person {
+
+  @Id @GeneratedValue
+  private Integer id;
 
   private String firstName;
 
@@ -11,6 +16,11 @@ public class Person {
   private String email;
 
   private LocalDate birthDate;
+
+  // region // constructors getters setters
+
+  public Person() {
+  }
 
   public Person(String firstName, String lastName) {
     this.firstName = firstName;
@@ -48,5 +58,7 @@ public class Person {
   public void setBirthDate(LocalDate birthDate) {
     this.birthDate = birthDate;
   }
+
+  // endregion
 
 }
