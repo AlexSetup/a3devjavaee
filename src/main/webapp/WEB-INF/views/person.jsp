@@ -6,31 +6,39 @@
   <title></title>
 </head>
 <body>
-<table>
-  <thead>
-    <tr>
-      <th>Prénom</th>
-      <th>Nom</th>
-      <th>Email</th>
-      <th>Date de naissance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input /></td>
-      <td><input /></td>
-      <td><input /></td>
-      <td><input /></td>
-      <td><input type="submit" /></td>
-    </tr>
-    <c:forEach var="person" items="${persons}">
+<form method="post" action="person/save">
+  <table>
+    <thead>
       <tr>
-        <td>${person.firstName}</td>
-        <td>${person.lastName}</td>
-        <td>${person.email}</td>
+        <th>Id</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Date de naissance</th>
       </tr>
-    </c:forEach>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr>
+        <td>*</td>
+        <td><input name="firstName" /></td>
+        <td><input name="lastName" /></td>
+        <td><input name="email" /></td>
+        <td><input name="birthDate" /></td>
+        <td><input type="submit" /></td>
+      </tr>
+      <c:forEach var="person" items="${persons}">
+        <tr>
+          <td>${person.id}</td>
+          <td>${person.firstName}</td>
+          <td>${person.lastName}</td>
+          <td>${person.email}</td>
+          <td>{person.birthDate}</td>
+          <td>modifier</td>
+          <td>supprimer</td>
+        </tr>
+      </c:forEach>
+    </tbody>
+  </table>
+</form>
 </body>
 </html>
