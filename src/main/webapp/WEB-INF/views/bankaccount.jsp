@@ -16,10 +16,13 @@
   </thead>
   <tbody>
     <tr>
-      <td><input /></td>
-      <td><input /></td>
-      <td><input /></td>
-      <td><input /></td>
+      <td colspan="2"><select name="owner" >
+        <option></option>
+        <c:forEach var="person" items="${persons}" >
+          <option value="${person.id}" >${person.firstName} ${person.lastName}</option>
+        </c:forEach>
+      </select></td>
+      <td><input name="balance" /></td>
       <td><input type="submit" /></td>
     </tr>
     <c:forEach var="account" items="${accounts}">
