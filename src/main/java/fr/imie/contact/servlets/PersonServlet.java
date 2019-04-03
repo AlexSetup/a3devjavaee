@@ -18,8 +18,7 @@ public class PersonServlet extends HttpServlet {
   @Inject
   private PersonRepository repository;
 
-  protected void service(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     if (request.getMethod().equalsIgnoreCase("post")) {
       Person person = new Person();
