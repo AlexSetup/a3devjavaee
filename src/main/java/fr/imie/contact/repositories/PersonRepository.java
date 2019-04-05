@@ -21,7 +21,14 @@ public class PersonRepository {
   }
 
   public void save(Person person) {
-    em.persist(person);
+    if (person.getId() == null)
+      em.persist(person);
+    else
+      em.merge(person);
+  }
+
+  public void deleteById(int id) {
+    em.remove(em.getReference(Person.class, id));
   }
 
 }

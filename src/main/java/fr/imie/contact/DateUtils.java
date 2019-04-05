@@ -13,6 +13,7 @@ public class DateUtils {
     }
     LocalDate date = LocalDate.parse(text, formatter);
     return date;
+    // return text == null || text.isEmpty() ? null : LocalDate.parse(text, formatter);
   }
 
 }

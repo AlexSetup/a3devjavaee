@@ -13,7 +13,7 @@ public class BankAccountRepository {
   EntityManager em;
 
   public List<BankAccount> findAll() {
-    return em.createQuery("select ba from BankAccount ba").getResultList();
+    return em.createQuery("select ba from BankAccount ba", BankAccount.class).getResultList();
   }
 
   public void save(BankAccount entity) {

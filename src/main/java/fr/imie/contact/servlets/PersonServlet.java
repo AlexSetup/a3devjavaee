@@ -33,6 +33,14 @@ public class PersonServlet extends HttpServlet {
       repository.save(person);
     }
 
+    if (request.getPathInfo() != null && request.getPathInfo().startsWith("/delete/")) {
+      Integer id = Integer.parseInt(request.getPathInfo().substring(request.getPathInfo().lastIndexOf('/') + 1));
+      repository.deleteById(id);
+    } else if (request.getPathInfo() != null && request.getPathInfo().matches("/[0-9]+")) {
+      Integer id = Integer.parseInt(request.getPathInfo().substring(request.getPathInfo().lastIndexOf('/') + 1));
+      request.setAttribute("id", id);
+    }
+
     List<Person> persons = repository.findAll();
     request.setAttribute("persons", persons);
     request.getRequestDispatcher("/WEB-INF/views/person.jsp").forward(request, response);
