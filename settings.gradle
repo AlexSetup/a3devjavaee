@@ -1,2 +1,3 @@
-rootProject.name = 'a3devjavaee'
-
+include 'web-servlet'
+//include 'web-spring'
+include 'web-struts2'

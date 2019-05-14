@@ -1,0 +1,22 @@
+
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'a3devjavaee'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly 'javax:javaee-api:8.0'
+  compileOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl:1.2.6'
+  runtime 'org.eclipse.persistence:eclipselink:2.7.4'
+  // runtime 'org.hibernate:hibernate-core:5.4.2.Final'
+  runtime 'mysql:mysql-connector-java:5.1.47'
+}
