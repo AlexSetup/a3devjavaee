@@ -22,8 +22,8 @@ public class PersonServlet extends HttpServlet {
 
     if (request.getMethod().equalsIgnoreCase("post")) {
       Person person = new Person();
-      if (request.getParameter("firstName") != null) {
-        person.setId(Integer.parseInt(request.getParameter("firstName")));
+      if (request.getParameter("id") != null) {
+        person.setId(Integer.parseInt(request.getParameter("id")));
       }
       person.setFirstName(request.getParameter("firstName"));
       person.setLastName(request.getParameter("lastName"));
