@@ -1,5 +1,6 @@
 <%@page pageEncoding="utf-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -47,7 +48,8 @@
             <td>${person.firstName}</td>
             <td>${person.lastName}</td>
             <td>${person.email}</td>
-            <td>${person.birthDate}</td>
+            <fmt:parseDate value="${person.birthDate}" type="date" pattern="yyyy-MM-dd" var="birthDate" />
+            <td><fmt:formatDate value="${birthDate}" type="date" pattern="dd/MM/yyyy" /></td>
             <td><a href="${context}${person.id}" !onclick="edit(event);" >modifier</a></td>
             <td><a href="${context}delete/${person.id}">supprimer</a></td>
           </tr>
